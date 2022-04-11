@@ -12,6 +12,20 @@ $(".header ul li a").click(function (event) {
 
 })
 
+$(".header ul li a").on("click" , function (el) {
+
+    el.preventDefault()
+
+    var SectionScroll =  $(this).data("scroll")
+
+    $("html , body").animate({
+
+        scrollTop: $("." +SectionScroll).offset().top
+
+    })
+
+})
+
 // landing Section 
 
 let landingSection = document.querySelector(".landing")
@@ -35,14 +49,17 @@ $(".project ul li").click(function () {
 
     $(this).addClass("active").siblings().removeClass("active")
 
-    var Fillter = "." + $(".project ul li").data("class")
+    var Fillter = "." + $(this).data("class")
 
     $(".project .row > div").fadeOut()
     $(".project .row "+ Fillter +"").fadeIn()
 
+    console.log(Fillter)
+
 })
 
 let projectImg = document.querySelectorAll(".project img")
+
 
 projectImg.forEach((img)=> {
 
@@ -89,5 +106,31 @@ projectImg.forEach((img)=> {
         })
 
     } )
+
+})
+
+// Button To Top 
+
+$("span.up").on("click" , function () {
+
+    $("html , body").animate({
+
+        scrollTop: 0
+
+    })
+
+})
+
+$(window).scroll(function () {
+
+    if ($(window).scrollTop() >= 1000) {
+
+        $("span.up").addClass("active")
+
+    } else {
+
+        $("span.up").removeClass("active")
+
+    }
 
 })
