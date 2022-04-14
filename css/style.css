@@ -30,7 +30,7 @@
     content: '';
     position: absolute;
     bottom: 4px;
-    width: 85px;
+    width: 100px;
     height: 2px;
     background-color: var(--main-Color);
     left: 9px;
@@ -38,8 +38,9 @@
 .main-header p {
     position: relative;
     bottom: -10px;
+    left: 10px;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 20px;
 }
 .section-header h2 {
     color: var(--main-Color);
@@ -71,6 +72,13 @@
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
 }
+    @media (max-width: 991px) {
+        .header {
+            width: 100%;
+            top: 0;
+
+        }
+    }
 .header .logo {
     color: #fff;
     font-weight: bold;
@@ -154,6 +162,11 @@
     background-attachment: fixed;
     height: 80vh;
     z-index: -1;
+}
+@media (max-width: 991px) {
+    .landing {
+        height: calc(100vh - 65.59px);
+    }
 }
 .landing::after {
     content: "";
@@ -379,7 +392,7 @@
 }
 .testmonlis .text-center img {
     border-radius: 4px;
-    max-width: 100%;
+    width: 100%;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
